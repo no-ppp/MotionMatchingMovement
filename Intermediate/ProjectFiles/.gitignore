@@ -5,3 +5,15 @@ DerivedDataCache/
 .vs/
 .vscode/
 .idea/
+/.Rider/Win64/Development/Editor/MyProject.json
+/.Rider/Win64/Development/Editor/UE5.json
+/.Rider/Win64/Development/Editor/UnrealEditor.json
+/.Rider/root.json
+/AutomationTool.csproj.References
+/MyProject.vcxproj
+/MyProject.vcxproj.filters
+/MyProject.vcxproj.user
+/UE5.vcxproj
+/UE5.vcxproj.filters
+/UE5.vcxproj.user
+/UECommon.props
