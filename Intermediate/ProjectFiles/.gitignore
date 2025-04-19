@@ -5,6 +5,8 @@ DerivedDataCache/
 .vs/
 .vscode/
 .idea/
+.env/
+Config/
 /.Rider/Win64/Development/Editor/MyProject.json
 /.Rider/Win64/Development/Editor/UE5.json
 /.Rider/Win64/Development/Editor/UnrealEditor.json

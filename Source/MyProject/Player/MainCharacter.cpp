@@ -81,15 +81,17 @@ void AMainCharacter::Move(const FInputActionValue& Value)
 {
 	//Get the vector
 	FVector2D MoveAxis = Value.Get<FVector2D>();
-	//Get the forward and right vector
-	FVector Forward = GetActorForwardVector();
-	FVector Right = GetActorRightVector();
-	//Get the direction
-	FVector Direction = (Forward * MoveAxis.Y) + (Right * MoveAxis.X);
-	//Normalize the direction
-	Direction.Normalize();
-	//Add movement input
-	AddMovementInput(Direction, MoveAxis.Size());
+
+	if (Controller)
+	{
+		const FRotator Rotation = Controller->GetControlRotation();
+		const FRotator YawRotation(0, Rotation.Yaw, 0);
+		const FVector ForwardDirection = FRotationMatrix(YawRotation).GetScaledAxis(EAxis::X);
+		const FVector RightDirection = FRotationMatrix(YawRotation).GetScaledAxis(EAxis::Y);
+
+		AddMovementInput(ForwardDirection, MoveAxis.Y);
+		AddMovementInput(RightDirection, MoveAxis.X);
+	}
 }
 
 void AMainCharacter::Look(const FInputActionValue& Value)

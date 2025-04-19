@@ -9,14 +9,6 @@
 void UMainAnimInstance::NativeInitializeAnimation()
 {
 	Super::NativeInitializeAnimation();
-	if (APawn* Pawn = TryGetPawnOwner())
-	{
-		if (AMainCharacter* Character = Cast<AMainCharacter>(Pawn))
-		{
-			CharacterMovement = Character->GetCharacterMovement()->Velocity.Size();
-			CharacterTrajectory = Character->GetCharacterTrajectory();
-		}
-	}
 }
 
 void UMainAnimInstance::NativeUpdateAnimation(float DeltaSeconds)

@@ -103,7 +103,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool IsSprinting() const { return bIsSprinting; }
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category=Trajectory)
 	UCharacterTrajectoryComponent* GetCharacterTrajectory() const { return CharacterTrajectory; }
 
 protected:
