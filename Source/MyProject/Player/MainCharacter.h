@@ -8,7 +8,6 @@
 #include "InputMappingContext.h"
 #include "MainCharacter.generated.h"
 
-
 class UCameraComponent;
 class USpringArmComponent;
 class UMotionTrajectoryComponent;
@@ -48,6 +47,8 @@ protected:
 	//Movement variables
 	UPROPERTY(VisibleAnywhere)
 	bool bIsSprinting = false;
+	
+	// MainCharacter.h
 
 	//Jump logic variables
 	virtual void Jump() override;

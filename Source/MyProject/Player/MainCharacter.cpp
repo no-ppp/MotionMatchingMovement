@@ -18,18 +18,8 @@ AMainCharacter::AMainCharacter()
 	//Crouch
 	GetCharacterMovement()->GetNavAgentPropertiesRef().bCanCrouch = true;
 	GetCharacterMovement()->CrouchedHalfHeight = 44.f;
-
-	//Camera
-	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm"));
-	SpringArm->SetupAttachment(GetMesh());
-	SpringArm->bUsePawnControlRotation = true;
-
-	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera Boom"));
-	FollowCamera->SetupAttachment(SpringArm);
-	FollowCamera->bUsePawnControlRotation = false;
-
-	CharacterTrajectory = CreateDefaultSubobject<UCharacterTrajectoryComponent>(TEXT("Character Trajectory"));
 	
+	CharacterTrajectory = CreateDefaultSubobject<UCharacterTrajectoryComponent>(TEXT("Character Trajectory"));
 	
 	
 }
@@ -49,6 +39,9 @@ void AMainCharacter::BeginPlay()
 			Subsystem->AddMappingContext(InputMapping.LoadSynchronous(), 0);
 		}
 	}
+	Super::BeginPlay();
+
+	
 }
 
 // Called every frame
